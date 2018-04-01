@@ -1,6 +1,12 @@
 import createPromiseCapability from '../utils/promise_capability.js';
 
+/**
+ * @class Parser
+ */
 export default class Parser {
+  /**
+   * @construct Parser
+   */
   constructor(mpdUrl) {
     this._mdpUrl = mpdUrl;
     this._mainfest;
@@ -63,7 +69,7 @@ export default class Parser {
   /**
    * @return {Promise}
    * Parse mainfest file to extract properties of Parser class.
-  */
+   */
   _parseMainfest() {
     // Parse the mainfest file and set properties of Parser class.
     let parseMainfestCapability = createPromiseCapability();
@@ -80,7 +86,7 @@ export default class Parser {
   /**
    * @return {Promise}
    * Request MPD file.
-  */
+   */
   _getMPD() {
     let xhrCapability = createPromiseCapability();
     var xhr = new XMLHttpRequest();

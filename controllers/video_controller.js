@@ -8,7 +8,6 @@ export default class VideoController {
    * @contructs VideoController
    */
   constructor(baseUrl, numberOfChunks) {
-    this._video = video;
     this._baseUrl = baseUrl;
     this._initUrl = this._baseUrl + 'init.mp4';
     this._templateUrl = this._baseUrl + 'segment_$Number$.m4s';
@@ -24,9 +23,7 @@ export default class VideoController {
     this._sourceBuffer = mediaSource.addSourceBuffer('video/mp4; codecs="avc1.4d401f"');
     this._sourceBuffer.addEventListener('updateend', this._nextSegment.bind(this));
     return this._getChunk(this._initUrl).then((chunk) => {
-      this._appendToBuffer(chunk).then(() => {
-        this._video.play();
-      });
+      return this._appendToBuffer(chunk);
     });
   }
 

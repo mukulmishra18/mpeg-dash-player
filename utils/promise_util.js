@@ -3,7 +3,7 @@
  * @returns {Object} Promise capability object.
  */
 
-export default function createPromiseCapability() {
+export default createPromiseCapability = () => {
   let capability = {};
   capability.promise = new Promise(function(resolve, reject) {
     capability.resolve = resolve;

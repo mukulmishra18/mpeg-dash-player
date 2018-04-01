@@ -1,5 +1,5 @@
 import EventHandler from './event_handler.js';
-
+import Controller from './controllers/controller.js';
 /**
  * @class Player
  */
@@ -15,6 +15,7 @@ export default class Player {
     this._duration = 112;
 
     this._eventHandler = new EventHandler(video, audio);
+    this._controller = new Controller(video, audio);
   }
 
   /**

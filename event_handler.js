@@ -2,6 +2,9 @@
  * @class EventHandler
  */
 export default class EventHandler{
+  /**
+   * @constructs EventHandler
+   */
   constructor(video, audio) {
     this._video = video;
     this._audio = audio;

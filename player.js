@@ -78,6 +78,10 @@ export default class Player {
 
   }
 
+  /**
+   * @return {Null}
+   * Destroy current instance of the player. 
+   */
   destroy() {
 
   }

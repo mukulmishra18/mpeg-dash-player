@@ -11,6 +11,7 @@ export default class Parser {
     this._mdpUrl = mpdUrl;
     this._mainfest;
     this._id;
+    this._baseUrl;
     this._numberOfChunks;
     this._mimeType;
     this._codecs;
@@ -22,6 +23,14 @@ export default class Parser {
    */
   get Id() {
     return this._id;
+  }
+
+  /**
+   * @return {String}
+   * Retuns baseUrl for the segments.
+   */
+  get baseUrl() {
+    return this._baseUrl;
   }
 
   /**
@@ -74,10 +83,11 @@ export default class Parser {
     // Parse the mainfest file and set properties of Parser class.
     let parseMainfestCapability = createPromiseCapability();
 
-    this._id = '';
+    this._id = '720_2400000';
     this._numberOfChunks = 25;
-    this._mimeType = '';
-    this._codecs = '';
+    this._mimeType = 'video/mp4';
+    this._codecs = 'avc1.42c00d';
+    this._baseUrl = 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/video/720_2400000/dash/'
     parseMainfestCapability.resolve();
 
     return parseMainfestCapability.promise;

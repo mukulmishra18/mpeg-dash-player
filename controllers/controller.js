@@ -1,4 +1,3 @@
-import createMediaSource from '../utils/mediasource_util.js';
 import AudioController from './audio_controller.js';
 import VideoController from './video_controller.js';
 
@@ -10,17 +9,19 @@ export default class Controller {
     /**
      * @constructs Controller.
      */
-constructor(video, audio) {
-    this._mediaSource = createMediaSource();
+constructor(mediaSource, parser) {
+    this._mediaSource = mediaSource;
+    this._parser = parser;
 
-    this._audioController = new AudioController();
-    this._videoController = new VideoController();
+    this._audioController = new AudioController(this._parser.baseUrl, this._parser.numberOfChunks);
+    this._videoController = new VideoController(this._parser.baseUrl, this._parser.numberOfChunks);
 
     this._mediaSource.onsourceopen = this._onMediaSourceOpen.bind(this);
-    video.src = window.URL.createObjectURL(this._mediaSource);
-    audio.src = window.URL.createObjectURL(this._mediaSource);
   }
 
+  /**
+   * @return {Null}
+   */
   _onMediaSourceOpen() {
     this._videoController.onMediaSourceOpen(this._mediaSource);
     this._audioController.onMediaSourceOpen(this._mediaSource);

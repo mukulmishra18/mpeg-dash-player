@@ -68,7 +68,7 @@ export default class VideoController {
     xhr.open('GET', url);
     xhr.responseType = 'arraybuffer';
 
-    xhr.onload = function(e) {
+    xhr.onload = (e) => {
       if (xhr.status != 200) {
         console.warn('Unexpected status code ' + xhr.status + ' for ' + url);
         return false;

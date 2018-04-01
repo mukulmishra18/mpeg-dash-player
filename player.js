@@ -1,7 +1,8 @@
+import EventHandler from './event_handler.js';
+
 /**
  * @class Player
  */
-
 export default class Player {
   /**
    * @constructs Player
@@ -12,6 +13,8 @@ export default class Player {
     this._src;
     // Set a fake duration for the video.
     this._duration = 112;
+
+    this._eventHandler = new EventHandler(video, audio);
   }
 
   /**
@@ -25,21 +28,21 @@ export default class Player {
    * @return {Boolean} Player in play state.
    */
   get isPlaying() {
-
+    return this._eventHandler.isPlaying;
   }
 
   /**
    * @return {Boolean} Player in pause state. 
    */
   get isPaused() {
-
+    return this._eventHandler.isPaused;
   }
 
   /**
    * @return {Number} Current current time of player. 
    */
   get currentTime() {
-
+    return this.video.currentTime;
   }
 
   /**

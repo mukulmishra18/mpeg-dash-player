@@ -2,7 +2,7 @@
  * @class Player
  */
 
-class Player {
+export default class Player {
   /**
    * @constructs Player
    */

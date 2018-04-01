@@ -11,7 +11,7 @@ export default class Player {
   /**
    * @constructs Player
    */
-	constructor(video, audio) {
+  constructor(video, audio) {
     this._video = video;
     this._audio = audio;
     this._mediaSource = createMediaSource();
@@ -103,7 +103,11 @@ export default class Player {
    * Unload the current video source. 
    */
   unload() {
-
+    this._src = null;
+    window.URL.revokeObjectURL(this._video.src);
+    window.URL.revokeObjectURL(this._audio.src);
+    this._video.src = null;
+    this._audio.src = null;
   }
 
   /**
@@ -111,7 +115,9 @@ export default class Player {
    * Destroy current instance of the player. 
    */
   destroy() {
-
+    // Remove pointer to object to free memory.
+    this._mediaSource = null;
+    this._video = null;
+    this._audio = null;
   }
-
 }

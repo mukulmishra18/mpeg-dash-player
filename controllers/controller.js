@@ -10,7 +10,7 @@ export default class Controller {
     /**
      * @constructs Controller.
      */
-	constructor(video, audio) {
+constructor(video, audio) {
     this._mediaSource = createMediaSource();
 
     this._audioController = new AudioController();

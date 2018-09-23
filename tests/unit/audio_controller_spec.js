@@ -1,4 +1,4 @@
-import AudioController from '../../controllers/vide_controller.js';
+import AudioController from '../../controllers/video_controller.js';
 
 describe('AudioController', () => {
   let baseUrl = 'http://example.com/path/to/audio/';

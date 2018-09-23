@@ -1,0 +1,28 @@
+{
+  "name": "mpeg-dash-player",
+  "version": "1.0.0",
+  "description": "Video player for MPEG DASH stream",
+  "main": "player.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "babel-node run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukulmishra18/mpeg-dash-player.git"
+  },
+  "author": "Mukul Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukulmishra18/mpeg-dash-player/issues"
+  },
+  "homepage": "https://github.com/mukulmishra18/mpeg-dash-player#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "jasmine": "^3.2.0",
+    "jasmine-node": "^1.16.2"
+  }
+}

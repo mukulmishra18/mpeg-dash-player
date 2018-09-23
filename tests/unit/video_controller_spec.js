@@ -1,4 +1,4 @@
-import VideoController from '../../controllers/vide_controller.js';
+import VideoController from '../../controllers/video_controller.js';
 
 describe('VideoController', () => {
   let baseUrl = 'http://example.com/path/to/video/';

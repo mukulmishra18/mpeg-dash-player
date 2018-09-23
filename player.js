@@ -1,7 +1,7 @@
 import EventHandler from './event_handler.js';
 import Controller from './controllers/controller.js';
 import Parser from './parser/parser.js';
-import createPromiseCapability from './utils/promise_capability.js';
+import createPromiseCapability from './utils/promise_util.js';
 import createMediaSource from './utils/mediasource_util.js';
 
 /**

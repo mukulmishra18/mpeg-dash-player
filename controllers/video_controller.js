@@ -1,4 +1,4 @@
-import createPromiseCapability from '../utils/promise_capability.js';
+import createPromiseCapability from '../utils/promise_util.js';
 
 /**
  * @class VideoController

@@ -1,6 +1,6 @@
 import Controller from '../../controllers/controller.js';
 
-decsribe('Controller', () => {
+describe('Controller', () => {
   // Create a fake parser class for this test.
   class fakeParser {
     constructor() {

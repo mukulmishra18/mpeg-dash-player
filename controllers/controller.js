@@ -9,7 +9,7 @@ export default class Controller {
     /**
      * @constructs Controller.
      */
-constructor(mediaSource, parser) {
+  constructor(mediaSource, parser) {
     this._mediaSource = mediaSource;
     this._parser = parser;
 
